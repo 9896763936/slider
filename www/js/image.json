@@ -1,0 +1,21 @@
+{ 
+ "images":[
+        {"picture":"img/flower1.jpg", "size":1, "default":"default"},
+        {"picture":"img/flower1.jpg", "size" :2, "default":"default"},
+        {"picture":"img/flower1.jpg", "size" :3, "default":"default"},
+        {"picture":"img/flower11.jpg" , "size": 6, "id" : 1},
+        {"picture":"img/flower2.jpg" , "size": 7.5, "id" : 2},
+        {"picture":"img/flower8.jpg", "size": 9, "id" : 3},
+        {"picture":"img/flower5.jpg" , "type": "R"},
+        {"picture":"img/flower6.jpg" , "type": "S"},
+        {"picture":"img/flower7.jpg", "color": "WW"},
+        {"picture":"img/flower8.jpg" , "color": "MC"},
+        {"picture":"img/flower9.jpg" , "Decoration": "none"},
+        {"picture":"img/flower10.jpg", "Decoration": "T1"},
+        {"picture":"img/flower11.jpg", "Decoration": "T2"},
+        {"picture":"img/flower12.jpg", "Decoration": "T3"},
+        {"picture":"img/flower7.jpg" , "size": 6},
+        {"picture":"img/flower6.jpg" , "size": 7.5},
+        {"picture":"img/flower5.jpg", "size": 9}
+        ]
+}

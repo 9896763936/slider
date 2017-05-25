@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link rel="manifest" href="manifest.json">
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+      <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+      <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+    <body ng-app="starter">
+        <ion-nav-bar class="bar-light">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+        <script id="templates/intro.html" type="text/ng-template"> 
+            <ion-view view-title="Intro">
+                <div class="marginTop" style="margin-top:100px"><input type="checkbox"   name="item" value="new" ng-model="checked" >Decoration
+                    <input type="checkbox" ng-checked="all" name="item" value="new" ng-model="checked1"  >Size
+                    <input type="checkbox" ng-checked="all"   name="item" value="new" ng-model="checked2">Type
+                    <input type="checkbox" ng-checked="all" name="item" value="new" ng-model="checked3" >Color</div>
+                <ion-nav-buttons side="left">
+                    <div class="" ng-show="checked1" style="margin-top:130px" >Size:
+                        <input type="checkbox"  name="item" value="new" ng-model="user.size6" ng-change="change(user)"  ng-checked="user.size6" id="sizeR" >6'
+                        <input type="checkbox"  name="item" value="new" ng-model="user.size7" ng-change="change1(user)"  ng-checked="user.size7" >7.5'
+                        <input type="checkbox"  name="item" value="new" ng-model="user.size9" ng-change="change2(user)"  ng-checked="user.size9">9'
+                    </div>
+                    <div class="" ng-show="checked2" style="margin-top:130px" >Type:
+                        <input type="checkbox"  name="item" value="new" ng-model="user.typeR" ng-change="changeR(user)"  ng-checked="user.typeR" id="typeR" >R
+                        <input type="checkbox"  name="item" value="new" ng-model="user.typeS" ng-change="changeS(user)"  ng-checked="user.typeS" id="typeS" >S
+                    </div>
+                    <div class="" ng-show="checked3" style="margin-top:130px" >Color:
+                        <input type="checkbox"  name="item" value="new" ng-model="user.colorWW" ng-change="changeWW(user)"  ng-checked="user.colorWW" id="colorWW" >WW
+                        <input type="checkbox"  name="item" value="new" ng-model="user.colorMC" ng-change="changeMC(user)"  ng-checked="user.colorMC" id="colorWW" >MC
+                    </div>
+                    <div class="" ng-show="checked" style="margin-top:130px" >Decoration:
+                        <input type="checkbox"  name="item" value="new" ng-model="user.decoNone" ng-change="changNone(user)"  ng-checked="user.decoNone" id="decoNone" >none
+                        <input type="checkbox"  name="item" value="new" ng-model="user.decoT1" ng-change="changT1(user)"  ng-checked="user.decoT1" id="decoT1" >T1
+                        <input type="checkbox"  name="item" value="new" ng-model="user.decoT2" ng-change="changT2(user)"  ng-checked="user.decoT2" id="decoT2" >T2
+                        <input type="checkbox"  name="item" value="new" ng-model="user.decoT3" ng-change="changT3(user)"  ng-checked="user.decoT3" id="decoT3" >T3
+                    </div>
+                    <button class="button button-positive button-clear no-animation"
+                            ng-click="startApp()" >
+                        Skip Intro
+                    </button>
+                    <button class="button button-positive button-clear no-animation"
+                    ng-click="previous()"  >
+                    Previous Slide
+                    </button>
+                </ion-nav-buttons>
+                <ion-nav-buttons side="right"> 
+                    <button class="button button-positive button-clear no-animation"
+                    ng-click="next()" >
+                    Next
+                    </button>
+                    <button class="button button-positive button-clear no-animation"
+                    ng-click="startApp()" >
+                    Start using MyApp
+                    </button>
+                </ion-nav-buttons>
+                <ion-slide-box on-slide-changed="slideChanged(index)">
+                    <ion-slide  active="slide.active" ng-repeat="user in users track by $index"  >{{user}}
+                       {{user.size}}  {{user.type}} <img ng-src="{{user.picture}}"/>
+                        <div class="carousel-caption">
+                            <h4>Slide {{$index+1}}</h4>
+                        </div>
+                        <p>We've worked super hard to make you happy.</p><p>But if you are angry, too bad.
+                        </p>
+                    </ion-slide>
+                </ion-slide-box>
+            </ion-view>
+    </script>
+</body>
+</html>
